@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\commands\expiration;
+use App\Console\commands\notify;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -30,7 +31,8 @@ class Kernel extends ConsoleKernel
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
-       // expiration::class;
+        expiration::class;
+        notify::class;
 
 
     }
