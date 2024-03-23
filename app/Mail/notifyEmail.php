@@ -19,11 +19,11 @@ class notifyEmail extends Mailable
      * @return void
      */
 
-     public $details;
+    public $details;
     public function __construct($data)
     {
-        $this -> $details = $data ;
-        }
+        $this->details = $data ;
+    }
 
     /**
      * Get the message envelope.
