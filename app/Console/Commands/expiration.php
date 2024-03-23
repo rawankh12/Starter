@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class expiration extends Command
 {
@@ -27,17 +28,18 @@ class expiration extends Command
      * @return int
      */
 
-     public function __construct()
-     {
-        parent::__construct();
-     }
+  
 
 
     public function handle()
     {
-        $users=User::where('expire',0)->get();
-        foreach($users as $user){
-            $user ->update(['expier' => 1]);
-        }
+        // $users=User::where('expire',0)->get();
+        // foreach($users as $user){
+        //     $user ->update(['expier' => 1]);
+        // }
+      User::create([
+        'name' => Str::random(5),
+      ]);
+
     }
 }
