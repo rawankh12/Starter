@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class expiration extends Command
@@ -26,6 +26,13 @@ class expiration extends Command
      *
      * @return int
      */
+
+     public function __construct()
+     {
+        parent::__construct();
+     }
+
+
     public function handle()
     {
         $users=User::where('expire',0)->get();
