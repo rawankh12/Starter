@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('user:expire')->everyMinute();
+         $schedule->command('notify:email')->daily();
     }
 
     /**
@@ -29,7 +30,8 @@ class Kernel extends ConsoleKernel
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
-        expiration::class;
+       // expiration::class;
+
 
     }
 }
