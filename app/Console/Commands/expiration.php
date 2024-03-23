@@ -35,7 +35,7 @@ class expiration extends Command
     {
         $users=User::where('expire','=',0)->get();
         foreach($users as $user){
-            $user ->update(['expier' => 1]);
+            $user ->update(['expire' => 1]);
         }
     }
 }
