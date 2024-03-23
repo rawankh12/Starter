@@ -29,7 +29,7 @@ class expiration extends Command
 
     public function handle()
     {
-        $users=User::where('expire',0)->get();
+        $users=User::where('expire','=',0)->get();
         foreach($users as $user){
             $user ->update(['expier' => 1]);
         }
