@@ -46,7 +46,7 @@ class notifyEmail extends Mailable
     {
         return new Content(
             view: 'emails.mailUsers',
-            compact: 'details'
+            
         );
     }
 
