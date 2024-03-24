@@ -27,15 +27,23 @@ class notify extends Command
      *
      * @return int
      */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
     public function handle()
     {
-        // $users = User::select('email')->get();
-
-        $emails = User::pluck('email')->toArray();
-         $data=['title' => 'programing' , 'body' => 'php'];  
-        foreach($emails as $email ){
-            Mail::To($email) ->send(new notifyEmail($data));
-        }
-        
+         // $user = User::select('email')->get();
+          $emails = User::pluck('email')->toArray();
+          $data=['title'=> 'progrmming' , 'body' => 'php'];
+          foreach($emails as $email){
+               Mail::To($email) ->send(new NotifyEmail($data));
+          }
     }
 }
