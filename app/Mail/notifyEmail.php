@@ -44,10 +44,8 @@ class notifyEmail extends Mailable
      */
     public function content()
     {
-        return new Content(
-            view('emails.mailUsers')->with('details', $this->details)
-            
-        );
+        return $this->view('emails.mailUsers',compact('details'));
+        
     }
 
     /**
