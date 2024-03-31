@@ -19,6 +19,7 @@ Auth::routes(['verify' =>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home') ->middleware('verified');
 
+Route::get('fillable','CrudController@getOffers');
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
