@@ -104,7 +104,7 @@ class CrudController extends Controller
         )->get(); // return collection of all result*/
 
 
-        return view('offers.all', compact('offers'));
+        return view('offers.all');
 
 
         
