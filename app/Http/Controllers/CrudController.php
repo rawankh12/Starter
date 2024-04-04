@@ -43,7 +43,8 @@ class CrudController extends Controller
 
     public function create()
     {
-        return view('offers.create');
+         return view('offers.create');
+        
     }
 
 

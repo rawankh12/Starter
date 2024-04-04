@@ -114,20 +114,9 @@
         @endif
 
         <br>
-        <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data">
+        <form action="{{ url('/storee') }}" method="POST">
             @csrf
             
-
-<!-- 
-            <div class="form-group">
-                <label for="exampleInputEmail1">أختر صوره العرض</label>
-                <input type="file" class="form-control" name="photo">
-                @error('photo')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div> -->
-
-
             <div class="form-group">
                 <label for="exampleInputEmail1">{{__('messages.Offer Name')}}</label>
                 <input type="text" class="form-control" name="name" placeholder="{{__('messages.Offer Name')}}">
@@ -135,15 +124,6 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-
-
-            <!-- <div class="form-group">
-                <label for="exampleInputEmail1">{{__('messages.Offer Name en')}}</label>
-                <input type="text" class="form-control" name="name_en" placeholder="{{__('messages.Offer Name')}}">
-                @error('name_en')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div> -->
 
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.Offer Price')}}</label>
@@ -162,19 +142,8 @@
                 @enderror
             </div>
 
-            <!-- <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.Offer details en')}}</label>
-                <input type="text" class="form-control" name="details_en"
-                       placeholder="{{__('messages.Offer details')}}">
-                @error('details_en')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div> -->
-
             <button type="submit" class="btn btn-primary">{{__('messages.Save Offer')}}</button>
         </form>
-
-
     </div>
 </div>
 </body>

@@ -17,18 +17,23 @@ use App\Mail\NotifyEmail;
 
 Auth::routes(['verify' =>true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home') ->middleware('verified');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home') ->middleware('verified');
 
 Route::get('fillable',[CrudController::class,'getOffers']);
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
     Route::group(['prefix' =>'offers'], function () {
-    
         Route::get('create', [CrudController::class,'create']);
-        Route::post('store', [CrudController::class,'store'])->name('offers.store');
+        Route::post('/storee', [CrudController::class, 'store']);
         Route::get('all', [CrudController::class, 'getAllOffers'])->name('offers.all');
     
 
     });
     });
+
+
+    Route::post('store',function()
+{
+    return view('offers.create');
+});
