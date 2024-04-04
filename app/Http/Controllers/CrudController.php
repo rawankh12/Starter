@@ -60,9 +60,9 @@ class CrudController extends Controller
 
         //insert
         Offer::create([
-            'name' =>   $request->name,
-            'price' =>  $request->price,
-            'details' => $request->details,
+            'name' => $request->name,
+            'price' =>$request->price,
+            'details' =>$request->details,
         ]);
 
         return redirect()->back()->with(['success' => 'تم اضافه العرض بنجاح ']);

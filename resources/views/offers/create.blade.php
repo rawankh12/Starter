@@ -116,7 +116,7 @@
         <br>
         <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data">
             @csrf
-            {{-- <input name="_token" value="{{csrf_token()}}"> --}}
+            
 
 <!-- 
             <div class="form-group">
